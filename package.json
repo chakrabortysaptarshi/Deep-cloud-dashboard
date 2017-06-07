@@ -1,0 +1,19 @@
+{
+  "name": "dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chakrabortysaptarshi/Deep-cloud-dashboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chakrabortysaptarshi/Deep-cloud-dashboard/issues"
+  },
+  "homepage": "https://github.com/chakrabortysaptarshi/Deep-cloud-dashboard#readme"
+}

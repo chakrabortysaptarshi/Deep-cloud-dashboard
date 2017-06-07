@@ -1,0 +1,120 @@
+#div1{
+	height: 100%;
+	width:40%;
+	float:left;
+}
+#div2{
+	height: 60%;
+	width:60%;
+	float:left;
+}
+#div1_1{
+	height: 70%;
+	width:100%;
+	float:left;
+	
+}
+#div1_2{
+	height: 30%;
+	width:100%;
+	float:left;
+	clear:left;
+}
+#div3{
+	height: 40%;
+	width:60%;
+	float:left;
+}
+
+#div1_1_1{
+	height:15%;
+	width:100%;
+	margin-left: 5%;
+	padding: 5%;
+}
+
+#div1_1_2{
+	height:70%;
+	width:100%;
+}
+
+#div1_1_3{
+	height:15%;
+	width:100%;
+	font-weight: bold;
+	font-size:18px;
+}
+
+#div1_1_2_1{
+	position: absolute;
+	float:left;
+	padding-top: 2%;
+	padding-left:10%;
+}
+
+#div1_1_2_2{
+	position: absolute;
+	float:left;
+	font-weight: bold;
+	font-size:18px;
+	z-index:1;
+	padding-left:16%;
+	padding-top:7%;
+}
+#div1_1_2_3{
+	position: absolute;
+	width:10%;
+	float:left;
+	font-weight: bold;
+	font-size:12px;
+	padding-left:7%;
+	padding-top:14%;
+}
+#div1_1_2_4{
+	position: absolute;
+	width:10%;
+	float:left;
+	font-weight: bold;
+	font-size:12px;
+	margin-left:24%;
+	margin-top:14%;
+}
+#div1_2_1{
+	width:50%;
+	height:100%;
+	font-size:10px;
+	float:left;
+	padding-right:2%;
+}
+
+#div1_2_2{
+	width:50%;
+	height:100%;
+	float:left;
+	padding-left:2%;
+}
+
+#c2Menubar {
+	height:10%;
+}
+
+#accuracycontainer{
+	height:90%;
+}
+
+#losscontainer{
+	height:90%;
+	display:none;
+}
+
+#cpucontainer {
+	float: left; 
+	width: 50%; 
+	height: 100%;
+}
+
+#ramcontainer {
+	float: left; 
+	width: 50%; 
+	height: 100%;
+}

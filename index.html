@@ -1,36 +1,38 @@
 <html>
 <head>
-<link rel="stylesheet" href="styles.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="jquery-circle-progress/dist/circle-progress.js"></script>
+<link rel="stylesheet" href="./public/styles.css">
+<script src="https://code.jquery.com/jquery-3.2.1.js"   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="   crossorigin="anonymous"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="/socket.io/socket.io.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="./public/dataUpdate.js"></script>
 </head>
 <body>
 <div id="div1">
 
-<div id="div1_1">
-<div id="div1_1_1">
-	<div style="width:50%; float:left; font-size:12px;"> <strong>CREATED: 8 th June, 2017 <br> TYPE: Manual Job</strong></div>
-	<div style="width:50%; float:left; font-size:12px;"> <strong>DEVICE: GPU(NA) <br> VERSION: v108</strong></div>
-</div>
+  <div id="div1_1">
+    <div id="div1_1_1">
+	   <div style="width:50%; float:left; font-size:12px;"> <strong>CREATED: 8 th June, 2017 <br> TYPE: Manual Job</strong></div>
+	   <div style="width:50%; float:left; font-size:12px;"> <strong>DEVICE: GPU(NA) <br> VERSION: v108</strong></div>
+    </div>
 
-<div id="div1_1_2">
-<div id="div1_1_2_1" data-percent="70"><script src="first.js"></script></div>
-<div id="div1_1_2_2" class="text-center">TRAINING<br><br> 15/25 <br> EPOCH <br> 2.369.20 <br> SAMPLES/S </div>
-<div id="div1_1_2_3" class="text-center">BATCH<br> 315/1875 <br><br> SECONDS/EPOCH <br> 12.66 </div>
-<div id="div1_1_2_4" class="text-center">ELAPSED<br> 00:01:32 <br><br> ESTIMATE <br> 00:03:43 </div>
-</div>
+    <div id="div1_1_2">
+      <div id="div1_1_2_1" data-percent="0"><script src="./public/first.js"></script></div>
+      <div id="div1_1_2_2" class="text-center"></div>
+      <div id="div1_1_2_3" class="text-center"></div>
+      <div id="div1_1_2_4" class="text-center" style="display: none">ELAPSED<br> 00:01:32 <br><br> ESTIMATE <br> 00:03:43 </div>
+    </div>
  
-<div id="div1_1_3" class="text-center"> KPI: 95.983<br>ACCURACY </div>
-</div>
-<div id="div1_2">
-<div id="div1_2_1">
-<table class="table" style="font-size:12px; margin: 1px solid red">
+    <div id="div1_1_3" class="text-center"> </div>
+  </div>
+
+  <div id="div1_2">
+    <div id="div1_2_1">
+      <table class="table" style="font-size:14px; margin: 1px solid red">
   <thead class="thead-inverse">
     <tr>
       <th colspan="2">ADDITIONAL INFORMATION</th>
@@ -50,10 +52,10 @@
 	  <td>TRAINING: 30000<br>VALIDATION:15000</td>
     </tr>
   </tbody>
-</table>
-</div>
-<div id="div1_2_2">
-<table class="table" style="font-size:12px; margin: 1px solid red">
+      </table>
+    </div>
+    <div id="div1_2_2">
+      <table class="table" style="font-size:14px; margin: 1px solid red">
   <thead class="thead-inverse">
     <tr>
       <th colspan="2">HYPERPARAMETERS</th>
@@ -81,23 +83,26 @@
 	  <td>0.95</td>
     </tr>
   </tbody>
-</table>
+      </table>
+    </div>
+  </div>
 </div>
-
-</div>
-</div>
-
 
 <div id="div2"> 
-<div class="container" id="c2Menubar">
-  <input type="radio" name="options" id="option1" autocomplete="off" onclick="accuracychart()" checked > Accuracy 
-  <input type="radio" name="options" id="option2" autocomplete="off" onclick="losschart()"> Loss
+  <div class="container text-center" id="c2Menubar">
+    <input type="radio" name="options" id="option1" autocomplete="off" onclick="accuracychart()" checked > Accuracy &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="options" id="option2" autocomplete="off" onclick="losschart()"> Loss
+  </div>
+  <div id="accuracycontainer"></div>
+  <div id="losscontainer"></div>
+  <script src="./public/second.js"></script>
 </div>
-<div id="accuracycontainer"></div>
-<div id="losscontainer"></div>
-<script src="second.js"></script>
+
+<div id="div3">
+  <div id="ramcontainer"></div>
+  <div id="cpucontainer"></div>
+  <script type="text/javascript" src="./public/third.js"></script>  
 </div>
-<div id="div3"></div>
 
 </body>
 </html>
